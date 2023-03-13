@@ -60,7 +60,8 @@ public class LogCostFilter implements Filter {
             return;
         }
         if (requestUrl != null && (requestUrl.contains("/doc.html") ||
-            requestUrl.contains("/user/login") || requestUrl.contains("/user/register"))) {
+            requestUrl.contains("/user/login") || requestUrl.contains("/user/register")) ||
+                requestUrl.contains("/swagger-ui.html")) {
             chain.doFilter(request, response);
             return;
         }
